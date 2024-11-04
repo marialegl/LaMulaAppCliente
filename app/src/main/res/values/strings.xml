@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">LaMulaApp</string>
+    
+    <string name="op_home_s">Home</string>
+    <string name="op_my_store_s">My store</string>
+    <string name="op_review_s">Reviews</string>
+    <string name="op_logout_s">Logout</string>
+
+    <string name="op_my_products_s">My products</string>
+    <string name="op_my_orders">Orders</string>
+
 </resources>
