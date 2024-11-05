@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
 import androidx.appcompat.app.AppCompatActivity
+import com.malejadev.lamulaappc.seller.MainActivitySeller
 
 
 class SplashScreenActivity : AppCompatActivity() {
@@ -22,7 +23,7 @@ class SplashScreenActivity : AppCompatActivity() {
             }
 
             override fun onFinish() {
-                startActivity(Intent(applicationContext, MainActivity::class.java))
+                startActivity(Intent(applicationContext, MainActivitySeller::class.java))
                 finishAffinity()
             }
 
