@@ -51,6 +51,8 @@ dependencies {
     implementation(libs.firebaseAuth)
     implementation(libs.firebase.auth.ktx) /*Authentication whit Firebase*/
     implementation(libs.firebaseDatabase) /*Database whit Firebase*/
+    implementation(libs.imagePicker) /*Crop an image*/
+    implementation(libs.glide) /*Load images*/
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

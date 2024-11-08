@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.malejadev.lamulaappc.R
+import com.malejadev.lamulaappc.SelectTypeActivity
 import com.malejadev.lamulaappc.databinding.ActivityMainSellerBinding
 import com.malejadev.lamulaappc.seller.Bottom_Nav_Fragments_Seller.FragmentMyProductsS
 import com.malejadev.lamulaappc.seller.Bottom_Nav_Fragments_Seller.FragmentOrdersS
@@ -50,10 +51,17 @@ class MainActivitySeller : AppCompatActivity() , NavigationView.OnNavigationItem
         binding.navigationView.setCheckedItem(R.id.op_home_s)
     }
 
+    private fun logout() {
+        firebaseAuth!!.signOut()
+        startActivity(Intent(applicationContext, SelectTypeActivity::class.java))
+        finish()
+        Toast.makeText(applicationContext, "You left the application", Toast.LENGTH_SHORT).show()
+    }
+
     private fun checkSession() {
         /*If the user is not logged in*/
         if (firebaseAuth!!.currentUser==null){
-            startActivity(Intent(applicationContext, SellerRegistrationActivity::class.java))
+            startActivity(Intent(applicationContext, SelectTypeActivity::class.java))
             Toast.makeText(applicationContext, "Unregistered or unlogged seller", Toast.LENGTH_SHORT).show()
         } else {
             Toast.makeText(applicationContext, "Online seller", Toast.LENGTH_SHORT).show()
@@ -82,8 +90,7 @@ class MainActivitySeller : AppCompatActivity() , NavigationView.OnNavigationItem
             }
 
             R.id.op_logout_s -> {
-                Toast.makeText(applicationContext, "You left the application", Toast.LENGTH_SHORT)
-                    .show()
+                logout()
             }
 
             R.id.op_my_products_s -> {

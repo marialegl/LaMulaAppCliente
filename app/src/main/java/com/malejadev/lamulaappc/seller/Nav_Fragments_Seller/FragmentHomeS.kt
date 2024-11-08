@@ -1,6 +1,7 @@
 package com.malejadev.lamulaappc.seller.Nav_Fragments_Seller
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,6 +12,7 @@ import com.malejadev.lamulaappc.R
 import com.malejadev.lamulaappc.databinding.FragmentHomeSBinding
 import com.malejadev.lamulaappc.seller.Bottom_Nav_Fragments_Seller.FragmentMyProductsS
 import com.malejadev.lamulaappc.seller.Bottom_Nav_Fragments_Seller.FragmentOrdersS
+import com.malejadev.lamulaappc.seller.Products.AddProductActivity
 
 
 class FragmentHomeS : Fragment() {
@@ -44,12 +46,8 @@ class FragmentHomeS : Fragment() {
         binding.bottomNavigation.selectedItemId = R.id.op_my_products_s
 
         binding.addFab.setOnClickListener {
-            Toast.makeText(
-                mContext, "Has pressed the floating button",
-                Toast.LENGTH_SHORT
-            ).show()
+            startActivity(Intent(context, AddProductActivity::class.java))
         }
-
 
         return binding.root
 

@@ -34,7 +34,7 @@ class SellerRegistrationActivity : AppCompatActivity() {
         }
     }
 
-    private var companyID = ""
+    private var siretNumber = ""
     private var fullName = ""
     private var email = ""
     private var address = ""
@@ -43,7 +43,7 @@ class SellerRegistrationActivity : AppCompatActivity() {
     private var confirmPassword = ""
 
     private fun validateData() {
-        companyID = binding.etIdS.text.toString().trim()
+        siretNumber = binding.etSiretS.text.toString().trim()
         fullName = binding.etNameS.text.toString().trim()
         email = binding.etEmailS.text.toString().trim()
         address = binding.etAddressS.text.toString().trim()
@@ -51,9 +51,9 @@ class SellerRegistrationActivity : AppCompatActivity() {
         password = binding.etPasswordS.text.toString().trim()
         confirmPassword = binding.etConfirmPasswordS.text.toString().trim()
 
-        if (companyID.isEmpty()) {
-            binding.etIdS.error = "Enter company ID"
-            binding.etIdS.requestFocus()
+        if (siretNumber.isEmpty()) {
+            binding.etSiretS.error = "Enter SIRET number"
+            binding.etSiretS.requestFocus()
         } else if (fullName.isEmpty()) {
             binding.etNameS.error = "Enter full name"
             binding.etNameS.requestFocus()
@@ -105,7 +105,7 @@ class SellerRegistrationActivity : AppCompatActivity() {
         progressDialog.setMessage("Saving user info")
 
         val uidBD = firebaseAuth.uid
-        val companyIDBD = companyID
+        val siretNumberBD = siretNumber
         val nameBD = fullName
         val emailBD = email
         val addressBD = address
@@ -114,7 +114,7 @@ class SellerRegistrationActivity : AppCompatActivity() {
 
         val infoSeller = HashMap<String, Any>()
         infoSeller["uid"] = "$uidBD"
-        infoSeller["companyID"] = "$companyIDBD"
+        infoSeller["companyID"] = "$siretNumberBD"
         infoSeller["name"] = "$nameBD"
         infoSeller["email"] = "$emailBD"
         infoSeller["address"] = "$addressBD"
