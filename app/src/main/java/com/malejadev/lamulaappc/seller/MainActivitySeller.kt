@@ -19,6 +19,7 @@ import com.malejadev.lamulaappc.seller.Bottom_Nav_Fragments_Seller.FragmentOrder
 import com.malejadev.lamulaappc.seller.Nav_Fragments_Seller.FragmentHomeS
 import com.malejadev.lamulaappc.seller.Nav_Fragments_Seller.FragmentMyStoreS
 import com.malejadev.lamulaappc.seller.Nav_Fragments_Seller.FragmentReviewS
+import com.malejadev.lamulaappc.seller.Nav_Fragments_Seller.FragmentSellerCategories
 
 class MainActivitySeller : AppCompatActivity() , NavigationView.OnNavigationItemSelectedListener {
 
@@ -84,7 +85,9 @@ class MainActivitySeller : AppCompatActivity() , NavigationView.OnNavigationItem
             R.id.op_my_store_s -> {
                 replaceFragment(FragmentMyStoreS())
             }
-
+            R.id.op_categories_s -> {
+                replaceFragment(FragmentSellerCategories())
+            }
             R.id.op_review_s -> {
                 replaceFragment(FragmentReviewS())
             }

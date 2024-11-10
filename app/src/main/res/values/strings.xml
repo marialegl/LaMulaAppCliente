@@ -79,6 +79,10 @@
     <string name="etDiscountNoteP">Ejem: 10% off</string>
     <string name="btnAddProduct">Add product</string>
 
+    <!--Add Category-->
+    <string name="etCategory">Enter category</string>
+    <string name="btnAddCategory">Add category</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

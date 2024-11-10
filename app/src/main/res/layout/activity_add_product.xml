@@ -13,20 +13,21 @@
         android:id="@+id/toolbarRL"
         android:layout_width="match_parent"
         android:layout_height="55dp">
-        
+
         <TextView
             android:text="@string/txtAddProducts"
             android:layout_centerInParent="true"
             android:textStyle="bold"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        
+            android:layout_height="wrap_content">
+        </TextView>
+
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_alignParentBottom="true"
-            android:background="#ccc"/>
-
+            android:background="#ccc">
+        </View>
     </RelativeLayout>
 
     <!--Icon Add Product-->
@@ -67,7 +68,7 @@
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/rv_images_product_description"/>
 
-            <!--Name product-->
+            <!--Product Name-->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/TIL_NameP"
                 android:layout_below="@+id/RV_Images_Product"
@@ -99,10 +100,25 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!--Quantity product-->
+            <!--Category-->
+            <TextView
+                android:id="@+id/Category"
+                android:text="@string/Category"
+                android:padding="15dp"
+                android:textSize="17sp"
+                android:gravity="center_vertical"
+                android:layout_marginTop="5dp"
+                app:drawableEndCompat="@drawable/ico_down"
+                android:background="@drawable/custom_edittext"
+                android:layout_below="@+id/TIL_DescriptionP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+            <!--Product quantity-->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/TIL_QuantityP"
-                android:layout_below="@id/TIL_DescriptionP"
+                android:layout_below="@+id/Category"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -115,7 +131,7 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!--Size product-->
+            <!--Product size-->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/TIL_PackageSizeP"
                 android:layout_below="@id/TIL_QuantityP"
@@ -185,11 +201,8 @@
                     android:inputType="textCapSentences"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
-
             </com.google.android.material.textfield.TextInputLayout>
-
         </RelativeLayout>
-
     </androidx.core.widget.NestedScrollView>
 
     <!--Add product button-->
@@ -201,7 +214,6 @@
         android:layout_margin="10dp"
         app:cornerRadius="8dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-
+        android:layout_height="wrap_content">
+    </com.google.android.material.button.MaterialButton>
 </RelativeLayout>
